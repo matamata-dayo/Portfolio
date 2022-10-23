@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プレミアリーグ(BIG 6)選手検索</title>
+    <link rel="stylesheet" href="../../assets/css/sanitize.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <script type="text/javascript" src="../../assets/js/selsectbox.js"></script>
+</head>
+<body>
+    <header class="header">
+        <a href="/">
+            <img class="header-logo" src="../../assets/img/premier-league-logo.png" alt="プレミアリーグのロゴ">
+        </a>
+        <h1 class="header-title">プレミアリーグ(BIG 6)選手検索</h1>
+    </header>
+
+    <section class="search">
+        <div class="select-team">
+            <ul>
+                <li class="initial-team">
+                    <img src="../../assets/img/initial-team.jpeg" alt="初期選択チーム">
+                </li>
+                <li class="teams">
+                    <img src="../../assets/img/Arsenal.jpeg" alt="アーセナル">
+                </li>
+                <li class="teams">
+                    <img src="../../assets/img/Chelsea.jpeg" alt="チェルシー">
+                </li>
+                <li class="teams">
+                    <img src="../../assets/img/Liverpool.jpeg" alt="リヴァプール">
+                </li>
+                <li class="teams">
+                    <img src="../../assets/img/Manchester-city.jpeg" alt="マンチェスター・シティ">
+                </li>
+                <li class="teams">
+                    <img src="../../assets/img/Manchester-united.jpg" alt="マンチェスター・ユナイテッド">
+                </li>
+                <li class="teams">
+                    <img src="../../assets/img/Tottenham.jpeg" alt="トッテナム">
+                </li>
+            </ul>
+            <select name="チーム名" class="select-box-team" onchange="changeTeam();">
+                <option disabled selected value="none">選択してください</option>
+                <option value="Arsenal">アーセナル</option>
+                <option value="Chelsea">チェルシー</option>
+                <option value="Liverpool">リヴァプール</option>
+                <option value="Manchester-City">マンチェスター・シティ</option>
+                <option value="Manchester-United">マンチェスター・ユナイテッド</option>
+                <option value="Tottenham-Hotspur">トッテナム</option>
+            </select>
+        </div>
+        <div class="selsect-position">
+            <select name="ポジション">
+                <option disabled selected value>選択してください</option>
+                <option value="fw">FW</option>
+                <option value="mf">MF</option>
+                <option value="df">DF</option>
+                <option value="gk">GK</option>
+            </select>    
+        </div>
+    </section>
+
+    <footer class="footer">
+        <ul class="footer-list">
+            <a href="/">お問合せ</a>
+            <p class="footer-c">&copy; matamata-dayo. 2022.</p>
+        </ul>
+    </footer>
+</body>
+</html>
