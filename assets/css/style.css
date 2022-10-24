@@ -25,17 +25,19 @@
 /* searchに対するcss */
 .search {
     width: 100%;
-    height: 680px;
+    height: 700px;
     background-image: url("../img/stadium.png");
     background-repeat: no-repeat;
     background-size:cover;
     background-attachment: fixed;
 }
 
-.teams {
-    width: 100px;
-    height: 100px;
-    display: none;
+.select-contents {
+    width: 200px;
+    display: flex;
+    flex-flow: column;
+    margin: 0 0 0 600px;
+    padding: 100px 0 0 0;
 }
 
 .footer {

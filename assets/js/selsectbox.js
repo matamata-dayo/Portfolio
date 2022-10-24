@@ -1,12 +1,27 @@
-$(function(){
-    $('.select-box-team').change(function () {
-      //選択したoptionのvalueを取得
-      var val = $(this).val();
-      //先頭に#を付けてvalueの値をclassに変換
-      var selectTeamClass = '.' + val;
-      //一度すべてのブロックを非表示にする
-      $('ul li').hide();
-      //選択したブロックのみを表示
-      $(selectTeamClass).show();
-    });
-  });
+let selectTeam = document.getElementById('select-box-team');
+
+selectTeam.onchange = function() {
+
+  const img = [
+    "../../assets/img/Arsenal.jpeg", 
+    "../../assets/img/Chelsea.jpeg",
+    "../../assets/img/Liverpool.jpeg",
+    "../../assets/img/Manchester-city.jpeg",
+    "../../assets/img/Manchester-united.jpg",
+    "../../assets/img/Tottenham.jpeg"
+  ];
+
+  if (selectTeam.value === "Arsenal") {
+    document.getElementById('team-img').src = img[0];
+  } else if (selectTeam.value === "Chelsea") {
+    document.getElementById('team-img').src = img[1];
+  } else if (selectTeam.value === "Liverpool") {
+    document.getElementById('team-img').src = img[2];
+  } else if (selectTeam.value === "Manchester-City") {
+    document.getElementById('team-img').src = img[3];
+  } else if (selectTeam.value === "Manchester-United") {
+    document.getElementById('team-img').src = img[4];
+  } else if (selectTeam.value === "Tottenham-Hotspur") {
+    document.getElementById('team-img').src = img[5];
+  }
+}
