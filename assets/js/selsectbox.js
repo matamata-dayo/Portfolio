@@ -8,7 +8,8 @@ selectTeam.onchange = function() {
     "../../assets/img/Liverpool.jpeg",
     "../../assets/img/Manchester-city.jpeg",
     "../../assets/img/Manchester-united.jpg",
-    "../../assets/img/Tottenham.jpeg"
+    "../../assets/img/Tottenham.jpeg",
+    "../../assets/img/FW_img.png"
   ];
 
   if (selectTeam.value === "Arsenal") {
@@ -23,5 +24,27 @@ selectTeam.onchange = function() {
     document.getElementById('team-img').src = img[4];
   } else if (selectTeam.value === "Tottenham-Hotspur") {
     document.getElementById('team-img').src = img[5];
+  }
+}
+
+let selectPosition = document.getElementById('select-box-position');
+
+selectPosition.onchange = function() {
+
+  const img = [
+    "../../assets/img/FW_img.png", 
+    "../../assets/img/MF_img.png",
+    "../../assets/img/DF_img.png",
+    "../../assets/img/GK_img.png"
+  ];
+
+  if (selectPosition.value === "fw") {
+    document.getElementById('position-img').src = img[0];
+  } else if (selectPosition.value === "mf") {
+    document.getElementById('position-img').src = img[1];
+  } else if (selectPosition.value === "df") {
+    document.getElementById('position-img').src = img[2];
+  } else if (selectPosition.value === "gk") {
+    document.getElementById('position-img').src = img[3];
   }
 }
