@@ -33,12 +33,18 @@
 }
 
 .search {
-    margin: 0 0 0 600px;
-    padding: 100px 0 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px;
 }
 
-.select-box {
+.select {
+    display: flex;
+    flex-flow: column;
     width: 200px;
+    margin: 0 20px;
 }
 
 .footer {
