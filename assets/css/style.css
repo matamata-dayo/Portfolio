@@ -3,33 +3,92 @@
 /* headerに対するcss */
 .header {
     width: 100%;
-    height: 80px;
-    display: flex;
-    text-align: center;
     background-color: #330066;
 }
 
-.header-logo {
-    margin: 5px 0px 0px 20px;
-    width: 70px;
-    height: 70px;
+.headerContents {
+    max-width: 1480px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
 }
 
-.header-title {
-    padding: 0 0 0 10px;
+.headerLink {
+    display: block;
+}
+
+header h1 {
+    margin-right: auto;
+    padding-left: 10px;
     line-height: 40px;
     font-size: 30px;
     color: white
 }
 
+.headerButton {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.buttonLogin {
+    background: transparent;
+    border: 2px solid transparent;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 200;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.buttonLogin:hover {
+    background-color: #660099;
+}
+
+.buttonSignUp {
+    margin-left: 10px;
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    background-color: #660099;
+    text-transform: uppercase;
+    font-weight: 200;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.buttonSignUp:hover {
+    background-color: #fff;
+    color: #660099;
+    border-color: #660099;
+}
+
 /* bodyに対するcss */
-.body {
+.siteImg {
     width: 100%;
-    height: 700px;
+    height: 600px;
     background-image: url("../img/stadium.png");
     background-repeat: no-repeat;
     background-size:cover;
-    background-attachment: fixed;
+}
+
+.siteImg h2 {
+    margin: 0 auto;
+    padding-top: 250px;
+    color: #fff;
+    text-align: center;
+    font-size: 40px;
+    text-shadow:
+    3px 3px 3px #000, -3px -3px 3px #000,
+    -3px 3px 3px #000,  3px -3px 3px #000,
+    3px 0px 3px #000, -3px -0px 3px #000,
+    0px 3px 3px #000,  0px -3px 3px #000;
 }
 
 .search {
@@ -48,21 +107,24 @@
 }
 
 .footer {
-    position: absolute;
-    bottom: 0;
+    min-height: 100vh;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.footer-list {
     width: 100%;
-    height: 80px;
+    margin: 0;
     background-color: #330066;
     text-align: center;
     display: inline;
     color: white;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
 }
 
-.footer-list {
-    margin: 20px 0 0 0;
-}
-
-.footer-c {
+.footer ul p {
     margin: 0;
 }
 
