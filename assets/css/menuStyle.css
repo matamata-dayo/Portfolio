@@ -41,9 +41,10 @@ header h1 {
     color: #fff;
     text-transform: uppercase;
     font-weight: 200;
-    border-radius: 4px;
+    border-radius: 20px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 20px;
+    padding: 3px 10px;
 }
 
 .buttonLogin:hover {
@@ -55,18 +56,19 @@ header h1 {
     background: transparent;
     border: 2px solid #fff;
     color: #fff;
-    background-color: #660099;
+    background-color: #1E90FF;
     text-transform: uppercase;
     font-weight: 200;
-    border-radius: 4px;
+    border-radius: 20px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 20px;
+    padding: 3px 10px;
 }
 
 .buttonSignUp:hover {
     background-color: #fff;
-    color: #660099;
-    border-color: #660099;
+    color: #1E90FF;
+    border-color: #1E90FF;
 }
 
 /* bodyに対するcss */
@@ -91,41 +93,125 @@ header h1 {
     0px 3px 3px #000,  0px -3px 3px #000;
 }
 
-.search {
+.explanation01 {
+    max-width: 1200px;
     display: flex;
     flex-wrap: wrap;
-    max-width: 1200px;
     margin: 0 auto;
-    padding: 100px;
+    padding: 0 100px;
 }
 
-.select {
+.explanation01 h2 {
+    margin: 100px auto 0px auto;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.playersImg {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.playersImg img {
+    margin: 10px;
+}
+
+.explanation02 {
+    display: flex;
+    max-width: 1200px;
+    margin: 100px auto 0 auto;
+    padding: 0 30px
+}
+
+.explanation02-String {
     display: flex;
     flex-flow: column;
-    width: 200px;
-    margin: 0 20px;
+    justify-content: center;
+    width: 50%;
+    margin: 0 auto;
+    padding: 0 30px;
 }
 
+.explanation02-String h2 {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0 auto;
+}
+
+.explanation02-String p {
+    font-size: 26px;
+    line-height: 1.5;
+    color: #637381;
+}
+
+.explanation02-Img {
+    width: 50%;
+    margin: 0 auto;
+    padding: 0 30px;
+    text-align: center;
+}
+
+.explanation03 {
+    max-width: 1200px;
+    margin: 100px auto 0 auto;
+    padding: 0 30px
+}
+
+.explanation03 h2 {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.explanation03 p {
+    font-size: 26px;
+    line-height: 1.5;
+    color: #637381;
+    text-align: center;
+}
+
+.explanation03Button {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.buttonSignUp-footer {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    background-color: #1E90FF;
+    text-transform: uppercase;
+    font-weight: 200;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 30px;
+    padding: 5px 20px;
+}
+
+.buttonSignUp-footer:hover {
+    background-color: #fff;
+    color: #1E90FF;
+    border-color: #1E90FF;
+}
+
+/* footerに対するcss */
 .footer {
-    min-height: 100vh;
-    position: relative;
-    box-sizing: border-box;
-}
-
-.footer-list {
     width: 100%;
-    margin: 0;
     background-color: #330066;
     text-align: center;
-    display: inline;
     color: white;
-    padding: 20px;
-    position: absolute;
-    bottom: 0;
+    margin: 100px auto 0 auto;
 }
 
-.footer ul p {
-    margin: 0;
+.footer div {
+    padding-top: 20px;
+}
+
+.footer p {
+    margin: 0 auto;
+    padding-bottom: 20px;
 }
 
 /* linkに対するcss */

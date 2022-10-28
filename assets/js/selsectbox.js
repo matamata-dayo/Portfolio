@@ -3,13 +3,13 @@ let selectTeam = document.getElementById('select-box-team');
 selectTeam.onchange = function() {
 
   const img = [
-    "../../assets/img/Arsenal.jpeg", 
-    "../../assets/img/Chelsea.jpeg",
-    "../../assets/img/Liverpool.jpeg",
-    "../../assets/img/Manchester-city.jpeg",
-    "../../assets/img/Manchester-united.jpg",
-    "../../assets/img/Tottenham.jpeg",
-    "../../assets/img/FW_img.png"
+    "../../assets/img/teams/Arsenal.jpeg", 
+    "../../assets/img/teams/Chelsea.jpeg",
+    "../../assets/img/teams/Liverpool.jpeg",
+    "../../assets/img/teams/Manchester-city.jpeg",
+    "../../assets/img/teams/Manchester-united.jpg",
+    "../../assets/img/teams/Tottenham.jpeg",
+    "../../assets/img/teams/FW_img.png"
   ];
 
   if (selectTeam.value === "Arsenal") {
@@ -32,10 +32,10 @@ let selectPosition = document.getElementById('select-box-position');
 selectPosition.onchange = function() {
 
   const img = [
-    "../../assets/img/FW_img.png", 
-    "../../assets/img/MF_img.png",
-    "../../assets/img/DF_img.png",
-    "../../assets/img/GK_img.png"
+    "../../assets/img/positions/FW_img.png", 
+    "../../assets/img/positions/MF_img.png",
+    "../../assets/img/positions/DF_img.png",
+    "../../assets/img/positions/GK_img.png"
   ];
 
   if (selectPosition.value === "fw") {

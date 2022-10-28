@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プレミアリーグ選手検索</title>
+    <link rel="stylesheet" href="../../assets/css/sanitize.css">
+    <link rel="stylesheet" href="../../assets/css/searchStyle.css">
+</head>
+<body>
+    <header class="header">
+        <div class="headerContents">
+            <div class="headerLogo">
+                <a href="/" class="headerLink">
+                    <img src="../../assets/img/premier-league-logo.png" alt="プレミアリーグのロゴ" width="60px" height="60px">
+                </a>
+            </div>
+            <h1>プレミアリーグ選手検索</h1>
+            <div>
+                <button type="button" class="buttonLogout">ログアウト</button>
+            </div> 
+        </div>
+    </header>
+
+    <div class="backImg">
+        <section class="search">
+            <div class="select select-team">
+                <h2>チーム</h2>
+                <img id="team-img" src="../../assets/img/teams/initial-team.jpeg" width="200px" height="180px" alt="初期選択チーム">
+                <select name="teamName" id="select-box-team" class="select-box">
+                    <option disabled selected value="none">選択してください</option>
+                    <option value="Arsenal">アーセナル</option>
+                    <option value="Chelsea">チェルシー</option>
+                    <option value="Liverpool">リヴァプール</option>
+                    <option value="Manchester-City">マンチェスター・シティ</option>
+                    <option value="Manchester-United">マンチェスター・ユナイテッド</option>
+                    <option value="Tottenham-Hotspur">トッテナム</option>
+                </select>
+            </div>
+            <div class="select select-position">
+                <h2>ポジション</h2>
+                <img id="position-img" src="../../assets/img/teams/initial-team.jpeg" width="200px" height="180px" alt="初期選択ポジション">
+                <select name="position" id="select-box-position" class="select-box">
+                    <option disabled selected value>選択してください</option>
+                    <option value="fw">FW</option>
+                    <option value="mf">MF</option>
+                    <option value="df">DF</option>
+                    <option value="gk">GK</option>
+                </select>    
+            </div>
+            <div class="select select-03">
+                <h2>得点数</h2>
+                <img id="position-img" src="../../assets/img/teams/initial-team.jpeg" width="200px" height="180px" alt="初期選択ポジション">
+                <select name="position" id="select-box-03" class="select-box">
+                    <option disabled selected value>選択してください</option>
+                    <option value="fw">FW</option>
+                    <option value="mf">MF</option>
+                    <option value="df">DF</option>
+                    <option value="gk">GK</option>
+                </select>    
+            </div>
+            <div class="select select-04">
+                <h2>アシスト数</h2>
+                <img id="position-img" src="../../assets/img/teams/initial-team.jpeg" width="200px" height="180px" alt="初期選択ポジション">
+                <select name="position" id="select-box-04" class="select-box">
+                    <option disabled selected value>選択してください</option>
+                    <option value="fw">FW</option>
+                    <option value="mf">MF</option>
+                    <option value="df">DF</option>
+                    <option value="gk">GK</option>
+                </select>    
+            </div>
+            <div class="select select-05">
+                <h2>移籍金</h2>
+                <img id="position-img" src="../../assets/img/teams/initial-team.jpeg" width="200px" height="180px" alt="初期選択ポジション">
+                <select name="position" id="select-box-05" class="select-box">
+                    <option disabled selected value>選択してください</option>
+                    <option value="fw">FW</option>
+                    <option value="mf">MF</option>
+                    <option value="df">DF</option>
+                    <option value="gk">GK</option>
+                </select>    
+            </div>
+            <div class="select select-06">
+                <h2>移籍金</h2>
+                <img id="position-img" src="../../assets/img/teams/initial-team.jpeg" width="200px" height="180px" alt="初期選択ポジション">
+                <select name="position" id="select-box-06" class="select-box">
+                    <option disabled selected value>選択してください</option>
+                    <option value="fw">FW</option>
+                    <option value="mf">MF</option>
+                    <option value="df">DF</option>
+                    <option value="gk">GK</option>
+                </select>    
+            </div>
+            <div class="select select-07">
+                <h2>移籍金</h2>
+                <img id="position-img" src="../../assets/img/teams/initial-team.jpeg" width="200px" height="180px" alt="初期選択ポジション">
+                <select name="position" id="select-box-07" class="select-box">
+                    <option disabled selected value>選択してください</option>
+                    <option value="fw">FW</option>
+                    <option value="mf">MF</option>
+                    <option value="df">DF</option>
+                    <option value="gk">GK</option>
+                </select>    
+            </div>
+            <div class="select select-08">
+                <h2>移籍金</h2>
+                <img id="position-img" src="../../assets/img/teams/initial-team.jpeg" width="200px" height="180px" alt="初期選択ポジション">
+                <select name="position" id="select-box-08" class="select-box">
+                    <option disabled selected value>選択してください</option>
+                    <option value="fw">FW</option>
+                    <option value="mf">MF</option>
+                    <option value="df">DF</option>
+                    <option value="gk">GK</option>
+                </select>    
+            </div>
+        </section>    
+        <div class="buttonContents">
+            <div class="buttonContent01">
+                <button type="button" class="buttonReset">検索値のリセット</button>
+            </div> 
+            <div class="buttonContent02">
+                <button type="button" class="buttonSearch">検索</button>
+            </div>      
+        </div>
+</div>
+
+    <footer class="footer">
+        <div>
+            <a href="/">お問合せ</a>
+        </div>
+        <p>&copy; matamata-dayo. 2022.</p>
+    </footer>    
+
+    <script type="text/javascript" src="../../assets/js/selsectbox.js"></script>
+</body>
+</html>
