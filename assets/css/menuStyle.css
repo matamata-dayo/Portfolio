@@ -71,6 +71,89 @@ header h1 {
     border-color: #1E90FF;
 }
 
+/* モーダルウィンドウに対するcss */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+  
+.modalContent {
+    background-color: #f4f4f4;
+    margin: 20% auto;
+    width: 70%;
+    box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2),0 7px 20px 0 rgba(0,0,0,0.17);
+    animation-name: modalopen;
+    animation-duration: 1s;
+}
+  
+@keyframes modalopen {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+.modalClose {
+    text-align: right;
+    padding: 10px 10px;
+}
+
+.modalCloseButton {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    font-size: 50px;
+    color: #666666;
+    margin-left: auto;
+}
+
+.modalCloseButton:before, .modalCloseButton:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 3px; /* 棒の幅*/
+    height: 30px; /* 棒の高さ */
+    background: #333;
+}
+
+.modalCloseButton:before {
+    transform: translate(-50%,-50%) rotate(45deg);
+}
+
+.modalCloseButton:after {
+    transform: translate(-50%,-50%) rotate(-45deg);
+}
+
+.modalCloseButton:hover {
+    cursor: pointer;
+    background-color: #aaaaaa;
+}
+  
+.modalHeader {
+    text-align: center;
+    padding: 3px 15px;
+}
+
+.modalHeader h2 {
+    font-size: 30px;
+}
+
+.modalHeader p {
+    font-size: 20px;
+}
+  
+.modalBody {
+    padding: 10px 20px;
+    color: black;
+}
+
 /* bodyに対するcss */
 .siteImg {
     width: 100%;

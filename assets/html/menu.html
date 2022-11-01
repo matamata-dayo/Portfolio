@@ -22,7 +22,21 @@
                     <button type="button" class="buttonLogin">ログイン</button>
                 </div>
                 <div>
-                    <button type="button" class="buttonSignUp">会員登録</button>
+                    <button type="button" id="modalOpen" class="buttonSignUp">会員登録</button>
+                    <div id="signUpModal01" class="modal">
+                        <div class="modalContent">
+                            <div class="modalClose">
+                                <span class="modalCloseButton"></span>
+                            </div>
+                            <div class="modalHeader">
+                                <h2>アカウントを作成する</h2>
+                                <p>アカウントを作成すると検索機能を使用できます</p>
+                            </div>
+                            <div class="modalBody">
+                                <p>モーダルです</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>    
             </div>    
         </div>
@@ -80,7 +94,7 @@
         <h2>まずは会員登録</h2>
         <p>会員登録をすることで検索機能がご利用いただけます。</p>
         <div class="explanation03Button">
-            <button type="button" class="buttonSignUp-footer">会員登録</button>
+            <button id="signUpModal02" type="button" class="buttonSignUp-footer">会員登録</button>
         </div>    
     </section>
 
@@ -91,5 +105,6 @@
     <p>&copy; matamata-dayo. 2022.</p>
 </footer>
 
+<script type="text/javascript" src="../../assets/js/modal.js"></script>
 </body>
 </html>
