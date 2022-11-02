@@ -8,7 +8,7 @@ import (
 /*
 menu画面のテンプレートを表示
 */
-func menu(w http.ResponseWriter, r *http.Request) {
+func handleMenu(w http.ResponseWriter, r *http.Request) {
 	t, err := template.ParseFiles("./assets/html/menu.html")
 	if err != nil {
 		panic(err.Error())
@@ -23,7 +23,9 @@ localhostの接続のみ受け付けるサーバー
 */
 func main() {
 	http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("assets/"))))
-	http.HandleFunc("/", menu)
-	http.HandleFunc("/signUp", handleSignUp)
+	http.HandleFunc("/", handleMenu)
+	http.HandleFunc("/signUp/", handleSignUp)
+	http.HandleFunc("/login/", handleLogin)
+	http.HandleFunc("/search/", handleSearch)
 	http.ListenAndServe(":8080", nil)
 }

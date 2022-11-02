@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ログイン</title>
+    <link rel="stylesheet" href="../../assets/css/sanitize.css">
+    <link rel="stylesheet" href="../../assets/css/signUpStyle.css">
+</head>
+<body>
+    <header class="header">
+        <div class="headerContents">
+            <div class="headerLogo">
+                <a href="/" class="headerLink">
+                    <img src="../../assets/img/soccerball.png" alt="サッカーボール" width="60px" height="60px">
+                </a>
+            </div>
+            <h1>ログイン</h1>
+        </div>
+    </header>
+
+    <div class="inputForm">
+        <h1>WELCOME BACK!!</h1>
+        <p class="subTitle">ログインして検索機能をご堪能ください。</p>
+        <form class="signUpForm" method="POST">
+            <input type="text" class="userNameForm" placeholder="ユーザー名(10文字以内)"><br>
+            <p class="errorMsg">
+                {{ with .UserNameMessage }}
+                    {{ . }}
+                {{ end }}
+            </p>
+            <input type="password" class="passwordForm" placeholder="パスワード(6文字以上)"><br>
+            <p class="errorMsg">
+                {{ with .PasswordMessage }}
+                    {{ . }}
+                {{ end }}
+            </p>
+            <input type="submit" class="submitSignUp" value="ログイン">    
+        </form>
+        <div class="haveAccount">
+            <a href="/signUp/">アカウントをお持ちでない方は会員登録を行ってください。</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div>
+            <a href="/">お問合せ</a>
+        </div>
+        <p>&copy; matamata-dayo. 2022.</p>
+    </footer>
+    
+</body>
+</html>

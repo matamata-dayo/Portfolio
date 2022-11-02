@@ -12,51 +12,17 @@
     <header class="header">
         <div class="headerContents">
             <div class="headerLogo">
-                <a href="../../assets/html/search.html" class="headerLink">
+                <a href="/" class="headerLink">
                     <img src="../../assets/img/soccerball.png" alt="サッカーボール" width="60px" height="60px">
                 </a>
             </div>
             <h1>プレミアリーグ選手検索</h1>
             <div class="headerButton">
                 <div>
-                    <button type="button" id="modalOpenLogin" class="buttonLogin">ログイン</button>
-                    <div id="loginModal" class="modal">
-                        <div class="modalContent">
-                            <div class="modalClose">
-                                <span class="modalCloseButton"></span>
-                            </div>
-                            <div class="modalHeader">
-                                <h2>WELCOME BACK!!</h2>
-                            </div>
-                            <div class="modalBody">
-                                <p>モーダルです</p>
-                            </div>
-                        </div>
-                    </div>
+                    <button onclick="location.href='/login/'" class="buttonLogin">ログイン</button>
                 </div>
                 <div>
-                    <button type="button" id="modalOpen01" class="buttonSignUp">会員登録</button>
-                    <div id="signUpModal" class="modal">
-                        <div class="modalContent">
-                            <div class="modalClose">
-                                <span class="modalCloseButton"></span>
-                            </div>
-                            <div class="modalHeader">
-                                <h2>アカウントを作成する</h2>
-                                <p>アカウントを作成すると検索機能を使用できます</p>
-                            </div>
-                            <div class="modalBody">
-                                <form action="/signUp" method="POST">
-                                    <p>{{.Message}}</p>
-                                    ニックネーム<input type="text" name="userName">
-                                    <br>
-                                    パスワード<input type="password" name="password">
-                                    <br>
-                                    <input type="submit" value="サインアップ">
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+                    <button onclick="location.href='/signUp/'" class="buttonSignUp">会員登録</button>
                 </div>    
             </div>    
         </div>
@@ -114,7 +80,7 @@
         <h2>まずは会員登録</h2>
         <p>会員登録をすることで検索機能がご利用いただけます。</p>
         <div class="explanation03Button">
-            <button id="modalOpen02" type="button" class="buttonSignUp-footer">会員登録</button>
+            <button type="button" onclick="location.href='/signUp/'" class="buttonSignUp-footer">会員登録</button>
         </div>    
     </section>
 
@@ -125,6 +91,5 @@
     <p>&copy; matamata-dayo. 2022.</p>
 </footer>
 
-<script type="text/javascript" src="../../assets/js/modal.js"></script>
 </body>
 </html>

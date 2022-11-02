@@ -1,0 +1,127 @@
+@charset "UTF-8";
+
+/* headerに対するcss */
+.header {
+    width: 100%;
+    background-color: #330066;
+}
+
+.headerContents {
+    max-width: 1480px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+}
+
+.headerLink {
+    display: block;
+}
+
+header h1 {
+    margin-right: auto;
+    padding-left: 10px;
+    line-height: 40px;
+    font-size: 30px;
+    color: white
+}
+
+/* bodyに対するcss */
+.inputForm {
+    text-align: center;
+    margin: 80px auto;
+}
+
+.inputForm h1 {
+    font-size: 40px;
+}
+
+.inputForm .subTitle {
+    font-size: 25px;
+}
+
+.inputForm input {
+    width: 500px;
+    height: 50px;
+    font-size: 30px;
+}
+
+.inputForm .errorMsg {
+    margin: 0;
+    height: 44px;
+    font-size: 20px;
+}
+
+.signUpForm {
+    width: 500px;
+    text-align: left;
+    margin: 0 auto;
+    color: red;
+}
+
+.submitSignUp {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    background-color: #1E90FF;
+    text-transform: uppercase;
+    font-weight: 200;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.submitSignUp:hover {
+    background-color: #fff;
+    color: #1E90FF;
+    border-color: #1E90FF;
+}
+
+.inputForm a {
+    font-size: 20px;
+}
+
+.haveAccount {
+    padding-top: 50px;
+}
+
+/* footerに対するcss */
+.footer {
+    width: 100%;
+    background-color: #330066;
+    text-align: center;
+    color: white;
+    margin: 80px auto 0 auto;
+}
+
+.footer div {
+    padding-top: 21px;
+}
+
+.footer p {
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+/* linkに対するcss */
+a:link {
+    color: blue;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: blue;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #330066;
+    text-decoration: underline;
+}
+
+a:active {
+    color: blue;
+    text-decoration: none;
+}
