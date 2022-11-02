@@ -24,5 +24,6 @@ localhostの接続のみ受け付けるサーバー
 func main() {
 	http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("assets/"))))
 	http.HandleFunc("/", menu)
+	http.HandleFunc("/signUp", handleSignUp)
 	http.ListenAndServe(":8080", nil)
 }

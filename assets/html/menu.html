@@ -13,17 +13,30 @@
         <div class="headerContents">
             <div class="headerLogo">
                 <a href="../../assets/html/search.html" class="headerLink">
-                    <img src="../../assets/img/premier-league-logo.png" alt="プレミアリーグのロゴ" width="60px" height="60px">
+                    <img src="../../assets/img/soccerball.png" alt="サッカーボール" width="60px" height="60px">
                 </a>
             </div>
             <h1>プレミアリーグ選手検索</h1>
             <div class="headerButton">
                 <div>
-                    <button type="button" class="buttonLogin">ログイン</button>
+                    <button type="button" id="modalOpenLogin" class="buttonLogin">ログイン</button>
+                    <div id="loginModal" class="modal">
+                        <div class="modalContent">
+                            <div class="modalClose">
+                                <span class="modalCloseButton"></span>
+                            </div>
+                            <div class="modalHeader">
+                                <h2>WELCOME BACK!!</h2>
+                            </div>
+                            <div class="modalBody">
+                                <p>モーダルです</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div>
-                    <button type="button" id="modalOpen" class="buttonSignUp">会員登録</button>
-                    <div id="signUpModal01" class="modal">
+                    <button type="button" id="modalOpen01" class="buttonSignUp">会員登録</button>
+                    <div id="signUpModal" class="modal">
                         <div class="modalContent">
                             <div class="modalClose">
                                 <span class="modalCloseButton"></span>
@@ -33,7 +46,14 @@
                                 <p>アカウントを作成すると検索機能を使用できます</p>
                             </div>
                             <div class="modalBody">
-                                <p>モーダルです</p>
+                                <form action="/signUp" method="POST">
+                                    <p>{{.Message}}</p>
+                                    ニックネーム<input type="text" name="userName">
+                                    <br>
+                                    パスワード<input type="password" name="password">
+                                    <br>
+                                    <input type="submit" value="サインアップ">
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -49,14 +69,14 @@
     <section class="explanation01">
         <h2>プレミアリーグの選手データが一目でわかります</h2>
         <div class="playersImg">
-            <img src="../../assets/img/players/Salah.png" alt="サラー" width="200px" height="200px">
-            <img src="../../assets/img/players/Son.png" alt="ソン" width="200px" height="200px">
-            <img src="../../assets/img/players/Haaland.png" alt="ハーランド" width="200px" height="200px">
-            <img src="../../assets/img/players/De-Bruyne.png" alt="デブライネ" width="200px" height="200px">
-            <img src="../../assets/img/players/Saint-Maximin.png" alt="サン=マキシマン" width="200px" height="200px">
-            <img src="../../assets/img/players/VanDijk.png" alt="ダイク" width="200px" height="200px">
-            <img src="../../assets/img/players/Cancelo.png" alt="カンセロ" width="200px" height="200px">
-            <img src="../../assets/img/players/Alisson.png" alt="アリソン" width="200px" height="200px">
+            <img src="../../assets/img/players/playerImg01.png" alt="イラスト01" width="200px" height="200px">
+            <img src="../../assets/img/players/playerImg02.png" alt="イラスト02" width="200px" height="200px">
+            <img src="../../assets/img/players/playerImg03.png" alt="イラスト03" width="200px" height="200px">
+            <img src="../../assets/img/players/playerImg04.png" alt="イラスト04" width="200px" height="200px">
+            <img src="../../assets/img/players/playerImg05.png" alt="イラスト05" width="200px" height="200px">
+            <img src="../../assets/img/players/playerImg06.png" alt="イラスト06" width="200px" height="200px">
+            <img src="../../assets/img/players/playerImg07.png" alt="イラスト07" width="200px" height="200px">
+            <img src="../../assets/img/players/playerImg08.png" alt="イラスト08" width="200px" height="200px">
         </div>
     </section>
 
@@ -66,13 +86,13 @@
             <p>プレミアリーグで活躍する選手の得点数、アシストなどスタッツを知ることができます。</p>    
         </div>
         <div class="explanation02-Img">
-            <img src="../../assets/img/rankingImg.png" alt="参考画像">
+            <img src="../../assets/img/siteImg01.png" alt="参考画像01">
         </div>
     </section>
 
     <section class="explanation02">
         <div class="explanation02-Img">
-            <img src="../../assets/img/rankingImg.png" alt="参考画像">
+            <img src="../../assets/img/siteImg02.png" alt="参考画像02">
         </div>
         <div class="explanation02-String">
             <h2>幅広い項目による検索が可能です</h2>
@@ -94,7 +114,7 @@
         <h2>まずは会員登録</h2>
         <p>会員登録をすることで検索機能がご利用いただけます。</p>
         <div class="explanation03Button">
-            <button id="signUpModal02" type="button" class="buttonSignUp-footer">会員登録</button>
+            <button id="modalOpen02" type="button" class="buttonSignUp-footer">会員登録</button>
         </div>    
     </section>
 
