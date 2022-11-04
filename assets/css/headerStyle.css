@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+/* headerに対するcss */
+.header {
+    width: 100%;
+    background-color: #330066;
+}
+
+.headerContents {
+    max-width: 1480px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+}
+
+.headerLink {
+    display: block;
+}
+
+header h1 {
+    margin-right: auto;
+    padding-left: 10px;
+    line-height: 40px;
+    font-size: 30px;
+    color: white
+}

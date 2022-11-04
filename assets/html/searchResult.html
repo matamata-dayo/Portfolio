@@ -14,7 +14,9 @@
     <header class="header">
         <div class="headerContents">
             <div class="headerLogo">
-                <img src="../../assets/img/soccerball.png" alt="サッカーボール" width="60px" height="60px">                
+                <a href="/" class="headerLink">
+                    <img src="../../assets/img/soccerball.png" alt="サッカーボール" width="60px" height="60px">
+                </a>
             </div>
             <h1>プレミアリーグ選手検索</h1>
             <div>
@@ -27,7 +29,7 @@
         <section class="search">
             <div class="select select-team">
                 <h2>チーム</h2>
-                <img id="team-img" src="../../assets/img/NoSelect.png" width="200px" height="180px" alt="初期選択チーム">
+                <img id="team-img" src="../../assets/img/teams/initial-team.jpeg" width="200px" height="180px" alt="初期選択チーム">
                 <select name="teamName" id="select-box-team" class="select-box">
                     <option disabled selected value="none">選択してください</option>
                     <option value="Arsenal">アーセナル</option>
@@ -40,7 +42,7 @@
             </div>
             <div class="select select-position">
                 <h2>ポジション</h2>
-                <img id="position-img" src="../../assets/img/NoSelect.png" width="200px" height="180px" alt="初期選択ポジション">
+                <img id="position-img" src="../../assets/img/teams/initial-team.jpeg" width="200px" height="180px" alt="初期選択ポジション">
                 <select name="position" id="select-box-position" class="select-box">
                     <option disabled selected value>選択してください</option>
                     <option value="fw">FW</option>
@@ -51,7 +53,7 @@
             </div>
             <div class="select select-03">
                 <h2>得点数</h2>
-                <img id="position-img" src="../../assets/img/NoSelect.png" width="200px" height="180px" alt="初期選択ポジション">
+                <img id="position-img" src="../../assets/img/teams/initial-team.jpeg" width="200px" height="180px" alt="初期選択ポジション">
                 <select name="position" id="select-box-03" class="select-box">
                     <option disabled selected value>選択してください</option>
                     <option value="fw">FW</option>
@@ -62,7 +64,7 @@
             </div>
             <div class="select select-04">
                 <h2>アシスト数</h2>
-                <img id="position-img" src="../../assets/img/NoSelect.png" width="200px" height="180px" alt="初期選択ポジション">
+                <img id="position-img" src="../../assets/img/teams/initial-team.jpeg" width="200px" height="180px" alt="初期選択ポジション">
                 <select name="position" id="select-box-04" class="select-box">
                     <option disabled selected value>選択してください</option>
                     <option value="fw">FW</option>
@@ -73,7 +75,7 @@
             </div>
             <div class="select select-05">
                 <h2>移籍金</h2>
-                <img id="position-img" src="../../assets/img/NoSelect.png" width="200px" height="180px" alt="初期選択ポジション">
+                <img id="position-img" src="../../assets/img/teams/initial-team.jpeg" width="200px" height="180px" alt="初期選択ポジション">
                 <select name="position" id="select-box-05" class="select-box">
                     <option disabled selected value>選択してください</option>
                     <option value="fw">FW</option>
@@ -84,7 +86,7 @@
             </div>
             <div class="select select-06">
                 <h2>移籍金</h2>
-                <img id="position-img" src="../../assets/img/NoSelect.png" width="200px" height="180px" alt="初期選択ポジション">
+                <img id="position-img" src="../../assets/img/teams/initial-team.jpeg" width="200px" height="180px" alt="初期選択ポジション">
                 <select name="position" id="select-box-06" class="select-box">
                     <option disabled selected value>選択してください</option>
                     <option value="fw">FW</option>
@@ -95,7 +97,7 @@
             </div>
             <div class="select select-07">
                 <h2>移籍金</h2>
-                <img id="position-img" src="../../assets/img/NoSelect.png" width="200px" height="180px" alt="初期選択ポジション">
+                <img id="position-img" src="../../assets/img/teams/initial-team.jpeg" width="200px" height="180px" alt="初期選択ポジション">
                 <select name="position" id="select-box-07" class="select-box">
                     <option disabled selected value>選択してください</option>
                     <option value="fw">FW</option>
@@ -106,7 +108,7 @@
             </div>
             <div class="select select-08">
                 <h2>移籍金</h2>
-                <img id="position-img" src="../../assets/img/NoSelect.png" width="200px" height="180px" alt="初期選択ポジション">
+                <img id="position-img" src="../../assets/img/teams/initial-team.jpeg" width="200px" height="180px" alt="初期選択ポジション">
                 <select name="position" id="select-box-08" class="select-box">
                     <option disabled selected value>選択してください</option>
                     <option value="fw">FW</option>
@@ -121,7 +123,7 @@
                 <button type="button" class="buttonReset">検索値のリセット</button>
             </div> 
             <div class="buttonContent02">
-                <button onclick="location.href='/searchResult/'" class="buttonSearch">検索</button>
+                <button type="button" class="buttonSearch">検索</button>
             </div>      
         </div>
     </div>

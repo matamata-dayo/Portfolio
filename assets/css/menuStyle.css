@@ -1,34 +1,6 @@
 @charset "UTF-8";
 
 /* headerに対するcss */
-.header {
-    width: 100%;
-    background-color: #330066;
-}
-
-.headerContents {
-    max-width: 1480px;
-    margin-right: auto;
-    margin-left: auto;
-    padding: 0 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 80px;
-}
-
-.headerLink {
-    display: block;
-}
-
-header h1 {
-    margin-right: auto;
-    padding-left: 10px;
-    line-height: 40px;
-    font-size: 30px;
-    color: white
-}
-
 .headerButton {
     display: flex;
     flex-wrap: wrap;
@@ -174,7 +146,7 @@ header h1 {
 }
 
 .explanation03Button {
-    margin-top: 30px;
+    margin: 30px auto;
     text-align: center;
 }
 
@@ -195,43 +167,4 @@ header h1 {
     background-color: #fff;
     color: #1E90FF;
     border-color: #1E90FF;
-}
-
-/* footerに対するcss */
-.footer {
-    width: 100%;
-    background-color: #330066;
-    text-align: center;
-    color: white;
-    margin: 100px auto 0 auto;
-}
-
-.footer div {
-    padding-top: 20px;
-}
-
-.footer p {
-    margin: 0 auto;
-    padding-bottom: 20px;
-}
-
-/* linkに対するcss */
-a:link {
-    color: white;
-    text-decoration: underline;
-}
-
-a:visited {
-    color: blue;
-    text-decoration: underline;
-}
-
-a:hover {
-    color: white;
-    text-decoration: underline;
-}
-
-a:active {
-    color: blue;
-    text-decoration: none;
 }

@@ -27,5 +27,6 @@ func main() {
 	http.HandleFunc("/signUp/", handleSignUp)
 	http.HandleFunc("/login/", handleLogin)
 	http.HandleFunc("/search/", handleSearch)
+	http.HandleFunc("/searchResult/", handleSearchResult)
 	http.ListenAndServe(":8080", nil)
 }

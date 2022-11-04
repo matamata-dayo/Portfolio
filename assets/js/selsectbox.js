@@ -3,7 +3,7 @@ let selectTeam = document.getElementById('select-box-team');
 selectTeam.onchange = function() {
 
   const img = [
-    '../../assets/img/teams/Arsenal.jpeg', 
+    '../../assets/img/teams/BUR.png', 
     '../../assets/img/teams/Chelsea.jpeg',
     '../../assets/img/teams/Liverpool.jpeg',
     '../../assets/img/teams/Manchester-city.jpeg',
