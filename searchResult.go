@@ -14,7 +14,7 @@ func handleSearchResult(w http.ResponseWriter, r *http.Request) {
 		if err != nil {
 			panic(err.Error())
 		}
-		if err := t.Execute(w, nil); err != nil {
+		if err := t.Execute(w, SearchResult); err != nil {
 			panic(err.Error())
 		}
 	}
