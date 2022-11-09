@@ -13,8 +13,7 @@ type Players struct {
 	position string
 	country  string
 	age      int
-	score    int
-	assist   int
+	number   int
 	foot     string
 	height   int
 }
@@ -59,8 +58,7 @@ func handleSearch(w http.ResponseWriter, r *http.Request) {
 				&players.position,
 				&players.country,
 				&players.age,
-				&players.score,
-				&players.assist,
+				&players.number,
 				&players.foot,
 				&players.height,
 			)
