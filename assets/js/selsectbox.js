@@ -28,7 +28,7 @@ const positionImg = [
   '../../assets/img/selectBox/positions/GK_img.png'
 ];
 
-const numberImg = '../../assets/img/selectBox/tshirt.png'
+const numberImg = '../../assets/img/selectBox/number.png'
 
 const captainImg = '../../assets/img/selectBox/captain-band.png'
 
