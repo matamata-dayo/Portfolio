@@ -1,7 +1,6 @@
 package main
 
 import (
-	"html/template"
 	"net/http"
 	"unicode/utf8"
 )
@@ -24,7 +23,7 @@ var signUpErrorMsg SignUpErrorMsg = SignUpErrorMsg{}
 func handleSignUp(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "GET" {
 		signUpErrorMsg = SignUpErrorMsg{}
-		returnSignUp(w, signUpErrorMsg)
+		ReturnPage(w, signUpErrorMsg, "signUp")
 	}
 	if r.Method == "POST" {
 		signUpErrorMsg.UserNameMessage = ""
@@ -51,20 +50,7 @@ func handleSignUp(w http.ResponseWriter, r *http.Request) {
 			}
 			http.Redirect(w, r, "/search/", 301)
 		} else {
-			returnSignUp(w, signUpErrorMsg)
+			ReturnPage(w, signUpErrorMsg, "signUp")
 		}
-	}
-}
-
-/*
-会員登録画面に跳ね返す
-*/
-func returnSignUp(w http.ResponseWriter, signUpErrorMsg SignUpErrorMsg) {
-	t, err := template.ParseFiles("./assets/html/signUp.html")
-	if err != nil {
-		panic(err.Error())
-	}
-	if err := t.Execute(w, signUpErrorMsg); err != nil {
-		panic(err.Error())
 	}
 }

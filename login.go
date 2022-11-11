@@ -1,7 +1,6 @@
 package main
 
 import (
-	"html/template"
 	"net/http"
 	"unicode/utf8"
 )
@@ -19,7 +18,7 @@ var loginErrorMsg LoginErrorMsg = LoginErrorMsg{}
 func handleLogin(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "GET" {
 		loginErrorMsg = LoginErrorMsg{}
-		returnLogin(w, loginErrorMsg)
+		ReturnPage(w, loginErrorMsg, "login")
 	}
 	if r.Method == "POST" {
 		loginErrorMsg.UserNameMessage = ""
@@ -43,20 +42,7 @@ func handleLogin(w http.ResponseWriter, r *http.Request) {
 			}
 			http.Redirect(w, r, "/search/", 301)
 		} else {
-			returnLogin(w, loginErrorMsg)
+			ReturnPage(w, loginErrorMsg, "login")
 		}
-	}
-}
-
-/*
-ログイン画面に跳ね返す
-*/
-func returnLogin(w http.ResponseWriter, loginErrorMsg LoginErrorMsg) {
-	t, err := template.ParseFiles("./assets/html/login.html")
-	if err != nil {
-		panic(err.Error())
-	}
-	if err := t.Execute(w, loginErrorMsg); err != nil {
-		panic(err.Error())
 	}
 }

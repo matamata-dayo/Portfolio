@@ -37,7 +37,7 @@ selectCaption.onchange = function() {
 }
 
 selectFoot.onchange = function() {
-  document.getElementById('foot-img').src = '../../assets/img/selectBox/foot/' + selectFoot.value + '-foot.png';
+  document.getElementById('foot-img').src = '../../assets/img/selectBox/foot/' + selectFoot.value + '.png';
 }
 
 selectHeight.onchange = function() {
