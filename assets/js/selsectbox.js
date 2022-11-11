@@ -15,12 +15,16 @@ selectTeam.onchange = function() {
 }
 
 selectPosition.onchange = function() {
-  document.getElementById('position-img').src = '../../assets/img/selectBox/positions/' + selectPosition.value + '_img.png';
+  document.getElementById('position-img').src = '../../assets/img/selectBox/positions/' + selectPosition.value + '.png';
 }
 
 selectCountry.onchange = function() {
   document.getElementById('country-img').src = '../../assets/img/selectBox/countries/' + selectCountry.value + '.png';
   document.getElementById('country-img').style.border = '2px solid #000000';
+}
+
+selectAge.onchange = function() {
+  document.getElementById('age-img').src = '../../assets/img/selectBox/age.png';
 }
 
 selectNumber.onchange = function() {
@@ -34,6 +38,10 @@ selectCaption.onchange = function() {
 
 selectFoot.onchange = function() {
   document.getElementById('foot-img').src = '../../assets/img/selectBox/foot/' + selectFoot.value + '-foot.png';
+}
+
+selectHeight.onchange = function() {
+  document.getElementById('height-img').src = '../../assets/img/selectBox/height.png';
 }
 
 // リセットボタン押下時、画像を全て初期化
