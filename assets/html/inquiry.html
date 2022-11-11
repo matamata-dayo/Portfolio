@@ -59,19 +59,19 @@
                             お問い合わせ内容
                         </p>
                         <p>
-                            <input type="text" name="question" class="input">
+                            <textarea name="question" class="input item"></textarea>
                         </p>
                     </li>
                 </ul>
                 <p class="error">
                     {{ with .NameError }}
-                        {{ . }}
+                        {{ . }}<br>
                     {{ end }}
                     {{ with .MailError }}
-                        {{ . }}
+                        {{ . }}<br>
                     {{ end }}
                     {{ with .MailCheckError }}
-                        {{ . }}
+                        {{ . }}<br>
                     {{ end }}
                     {{ with .QuestionError }}
                         {{ . }}

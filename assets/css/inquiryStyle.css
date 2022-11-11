@@ -1,5 +1,37 @@
 @charset "UTF-8";
 
+/* パンくずリストに対するcss */
+.breadcrumb {
+    margin: 10px 0 0 10px;
+    padding: 0;
+    list-style: none;
+    text-align: left;
+}
+
+.breadcrumb li {
+    display: inline;
+    list-style: none;
+}
+
+.breadcrumb li:last-child::after {
+    content: '';
+}
+
+.breadcrumb li a {
+    text-decoration: none;
+    color: #52b5ee;
+}
+
+.breadcrumb li a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb li:after {
+    content: '>';
+    padding: 0 0.2em;
+    color: #555;
+}
+
 /* bodyに対するcss */
 body {
     display: flex;
@@ -29,7 +61,7 @@ body {
 }
 
 .contents {
-    font-size: 17px;
+    font-size: 18px;
     margin: 50px 0px 20px 0px;
     width: 100%;
     text-align: left;
@@ -52,7 +84,7 @@ body {
 }
 
 .input {
-    font-size: 15px;
+    font-size: 18px;
     letter-spacing: 0.05em;
     position: relative;
     width: 100%;
@@ -61,16 +93,21 @@ body {
     border-radius: 5px;
 }
 
-.submit {
-    margin: 50px auto;
-    text-align: center;
+.item {
+    height: 300px;
 }
 
 .error {
-    margin: 20px auto;
+    margin: 0px auto 20px;
+    padding-bottom: 100px;
     text-align: left;
     color: red;
     height: 17px;
+}
+
+.submit {
+    margin: 0 auto 50px;
+    text-align: center;
 }
 
 .submitButton {
