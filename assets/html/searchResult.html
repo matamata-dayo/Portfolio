@@ -25,24 +25,48 @@
         </div>
     </header>
 
-    <div class="main">
+    <main>
         <nav>
             <ol class="breadcrumb">
                 <li><a href="/search">検索画面</a></li>
                 <li>検索結果</li>
             </ol>
         </nav>
-        <p>検索結果</p>
-        {{ . }}
-    </div>
+        <div class="searchTable">
+            <p>検索結果</p>
+            <table border="1">
+                <tr>
+                    <th>名前</th>
+                    <th>所属チーム</th>
+                    <th>ポジション</th>
+                    <th>国籍</th>
+                    <th>年齢</th>
+                    <th>背番号</th>
+                    <th>利き足</th>
+                    <th>身長</th>
+                </tr>
+                {{ range $index, $player := . -}}
+                <tr>
+                    <td>{{ $player.Name}}</td>
+                    <td>{{ $player.Team}}</td>
+                    <td>{{ $player.Position}}</td>
+                    <td>{{ $player.Country}}</td>
+                    <td>{{ $player.Age}}</td>
+                    <td>{{ $player.Number}}</td>
+                    <td>{{ $player.Foot}}</td>
+                    <td>{{ $player.Height}}</td>
+                </tr>
+                {{- end }}
+            </table>    
+        </div>
+    </main>
 
     <footer class="footer">
         <div>
-            <a href="/inquiry/" class="questions">お問合せ</a>
+            <a href="/contact/" class="questions">お問合せ</a>
         </div>
         <p>&copy; matamata-dayo. 2022.</p>
     </footer>    
 
-    <script type="text/javascript" src="../../assets/js/selsectbox.js"></script>
 </body>
 </html>

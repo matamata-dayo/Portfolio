@@ -1,17 +1,25 @@
 package main
 
 import (
+	"database/sql"
 	"html/template"
 	"net/http"
+	"portfolio/database"
 )
 
-/*
-localhostの接続のみ受け付けるサーバー
-*/
+var db *sql.DB
+
 func main() {
+
+	// コネクションを開き、アプリ終了時に閉じる
+	db = database.Connect()
+	defer db.Close()
+
+	// ハンドラの登録
 	http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("assets/"))))
 	http.HandleFunc("/", handleMenu)
-	http.HandleFunc("/inquiry/", handleInquiry)
+	http.HandleFunc("/contact/", handleContact)
+	http.HandleFunc("/contactResult/", handleContactResult)
 	http.HandleFunc("/signUp/", handleSignUp)
 	http.HandleFunc("/login/", handleLogin)
 	http.HandleFunc("/search/", handleSearch)
@@ -37,4 +45,8 @@ func ReturnPage(w http.ResponseWriter, templateMsg interface{}, fileName string)
 	if err := t.Execute(w, templateMsg); err != nil {
 		panic(err.Error())
 	}
+}
+
+func GetConnection() *sql.DB {
+	return db
 }

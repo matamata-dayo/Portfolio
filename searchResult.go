@@ -3,6 +3,7 @@ package main
 import (
 	"html/template"
 	"net/http"
+	"portfolio/database"
 )
 
 /*
@@ -14,7 +15,7 @@ func handleSearchResult(w http.ResponseWriter, r *http.Request) {
 		if err != nil {
 			panic(err.Error())
 		}
-		if err := t.Execute(w, SearchResult); err != nil {
+		if err := t.Execute(w, database.SearchResult); err != nil {
 			panic(err.Error())
 		}
 	}

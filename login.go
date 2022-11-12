@@ -2,6 +2,7 @@ package main
 
 import (
 	"net/http"
+	"portfolio/database"
 	"unicode/utf8"
 )
 
@@ -10,7 +11,7 @@ type LoginErrorMsg struct {
 	PasswordMessage string
 }
 
-var loginErrorMsg LoginErrorMsg = LoginErrorMsg{}
+var loginErrorMsg LoginErrorMsg
 
 /*
 ログインボタン押下時の処理
@@ -21,25 +22,40 @@ func handleLogin(w http.ResponseWriter, r *http.Request) {
 		ReturnPage(w, loginErrorMsg, "login")
 	}
 	if r.Method == "POST" {
-		loginErrorMsg.UserNameMessage = ""
-		loginErrorMsg.PasswordMessage = ""
+		loginErrorMsg = LoginErrorMsg{}
+
+		// POSTデータの取得
 		r.ParseForm()
+		userName := r.Form.Get("userName")
+		password := r.Form.Get("password")
 
 		// ユーザーネーム入力チェック
-		stringLen := utf8.RuneCountInString(r.Form.Get("userName"))
-		if stringLen == 0 {
+		userNameLen := utf8.RuneCountInString(userName)
+		if userNameLen == 0 {
 			loginErrorMsg.UserNameMessage = "ユーザー名が入力されていません"
-		} else if stringLen > 10 {
+		} else if userNameLen > 10 {
 			loginErrorMsg.UserNameMessage = "10文字以内で入力してください"
+		} else {
+			// ユーザーネーム存在チェック
+			if database.CheckUserName(GetConnection(), userName) {
+				loginErrorMsg.UserNameMessage = "そのユーザーネームは登録されていません"
+			}
 		}
 
 		// パスワード入力チェック
+		passwordLen := utf8.RuneCountInString(password)
+		if passwordLen == 0 {
+			loginErrorMsg.PasswordMessage = "パスワードが入力されていません"
+		} else if passwordLen < 6 {
+			loginErrorMsg.PasswordMessage = "パスワードは6文字以上です"
+		} else {
+			if !database.CheckPassword(GetConnection(), userName, password) {
+				loginErrorMsg.PasswordMessage = "パスワードが違います"
+			}
+		}
 
 		// 入力内容によってページ遷移
 		if loginErrorMsg.UserNameMessage == "" && loginErrorMsg.PasswordMessage == "" {
-			userInformation = UserInformation{
-				UserName: r.Form.Get("userName"),
-			}
 			http.Redirect(w, r, "/search/", 301)
 		} else {
 			ReturnPage(w, loginErrorMsg, "login")

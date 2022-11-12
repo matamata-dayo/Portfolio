@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+/* bodyに対するcss */
+body {
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+}
+
+main {
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    flex: 1;
+}
+
+main h1 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: 180px;
+}
+
+main p {
+    font-size: 30px;
+    color: #637381;
+    margin-bottom: 100px;
+}
+
+main a {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    background-color: rgb(31, 31, 31);
+    text-transform: uppercase;
+    font-weight: 200;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 20px 100px;
+    text-decoration: none;
+}
+
+main a:hover {
+    background-color: #fff;
+    color: rgb(31, 31, 31);
+    border-color: rgb(31, 31, 31);
+}
