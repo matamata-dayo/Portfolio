@@ -38,7 +38,7 @@ func handleLogin(w http.ResponseWriter, r *http.Request) {
 		} else {
 			// ユーザーネーム存在チェック
 			if database.CheckUserName(GetConnection(), userName) {
-				loginErrorMsg.UserNameMessage = "そのユーザーネームは登録されていません"
+				loginErrorMsg.PasswordMessage = "ユーザーネームかパスワードが違います"
 			}
 		}
 
@@ -50,7 +50,7 @@ func handleLogin(w http.ResponseWriter, r *http.Request) {
 			loginErrorMsg.PasswordMessage = "パスワードは6文字以上です"
 		} else {
 			if !database.CheckPassword(GetConnection(), userName, password) {
-				loginErrorMsg.PasswordMessage = "パスワードが違います"
+				loginErrorMsg.PasswordMessage = "ユーザーネームかパスワードが違います"
 			}
 		}
 
