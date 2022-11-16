@@ -33,13 +33,13 @@
         <h1>WELCOME BACK!!</h1>
         <p class="subTitle">ログインして検索機能をご堪能ください。</p>
         <form class="signUpForm" method="POST">
-            <input type="text" name="userName" class="userNameForm" placeholder="ユーザー名(10文字以内)"><br>
+            <input type="text" name="userName" class="userNameForm" placeholder="ユーザー名(10文字以内)" value="{{ .UserName }}"><br>
             <p class="errorMsg">
                 {{ with .UserNameMessage }}
                     {{ . }}
                 {{ end }}
             </p>
-            <input type="password" name="password" class="passwordForm" placeholder="パスワード(6文字以上)"><br>
+            <input type="password" name="password" class="passwordForm" placeholder="パスワード(6文字以上)" value="{{ .Password }}"><br>
             <p class="errorMsg">
                 {{ with .PasswordMessage }}
                     {{ . }}

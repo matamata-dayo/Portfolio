@@ -3,11 +3,14 @@ package main
 import (
 	"net/http"
 	"portfolio/database"
+	"portfolio/session"
 	"unicode/utf8"
 )
 
 type LoginErrorMsg struct {
+	UserName        string
 	UserNameMessage string
+	Password        string
 	PasswordMessage string
 }
 
@@ -17,11 +20,19 @@ var loginErrorMsg LoginErrorMsg
 ログインボタン押下時の処理
 */
 func handleLogin(w http.ResponseWriter, r *http.Request) {
+
 	if r.Method == "GET" {
+		// テンプレートメッセージの初期化
 		loginErrorMsg = LoginErrorMsg{}
-		ReturnPage(w, loginErrorMsg, "login")
-	}
-	if r.Method == "POST" {
+
+		// ログインセッションが存在する場合は、ログイン画面を飛ばす
+		if session.CheckSession() {
+			http.Redirect(w, r, "/search/", 301)
+		} else {
+			ReturnPage(w, loginErrorMsg, "login")
+		}
+	} else if r.Method == "POST" {
+		// テンプレートメッセージの初期化
 		loginErrorMsg = LoginErrorMsg{}
 
 		// POSTデータの取得
@@ -58,6 +69,8 @@ func handleLogin(w http.ResponseWriter, r *http.Request) {
 		if loginErrorMsg.UserNameMessage == "" && loginErrorMsg.PasswordMessage == "" {
 			http.Redirect(w, r, "/search/", 301)
 		} else {
+			loginErrorMsg.UserName = userName
+			loginErrorMsg.Password = password
 			ReturnPage(w, loginErrorMsg, "login")
 		}
 	}

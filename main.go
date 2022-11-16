@@ -5,6 +5,7 @@ import (
 	"html/template"
 	"net/http"
 	"portfolio/database"
+	"portfolio/session"
 )
 
 var db *sql.DB
@@ -31,6 +32,10 @@ func main() {
 menu画面のテンプレートを表示
 */
 func handleMenu(w http.ResponseWriter, r *http.Request) {
+
+	// セッションの開始
+	session.SessionStart(w, r)
+
 	ReturnPage(w, "", "menu")
 }
 

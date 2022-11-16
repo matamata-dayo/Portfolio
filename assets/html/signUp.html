@@ -33,13 +33,13 @@
         <h1>アカウントを作成する</h1>
         <p class="subTitle">アカウントを作成すると検索機能が使用できます。</p>
         <form class="signUpForm" method="POST">
-            <input type="text" name="userName" class="userNameForm" placeholder="ユーザー名(10文字以内)" maxlength="10"><br>
+            <input type="text" name="userName" class="userNameForm" placeholder="ユーザー名(10文字以内)" maxlength="10" value="{{ .UserName }}"><br>
             <p class="errorMsg">
                 {{ with .UserNameMessage }}
                     {{ . }}
                 {{ end }}
             </p>
-            <input type="password" name="password" class="passwordForm" placeholder="パスワード(6文字以上)" pattern="^[0-9a-zA-Z]+$"><br>
+            <input type="password" name="password" class="passwordForm" placeholder="パスワード(6文字以上)" pattern="^[0-9a-zA-Z]+$" value="{{ .Password }}"><br>
             <p class="errorMsg">
                 {{ with .PasswordMessage }}
                     {{ . }}

@@ -7,9 +7,13 @@ import (
 )
 
 type ContactErrorMsg struct {
+	Name           string
 	NameError      string
+	Mail           string
 	MailError      string
+	MailCheck      string
 	MailCheckError string
+	Content        string
 	ContentError   string
 }
 
@@ -67,6 +71,10 @@ func handleContact(w http.ResponseWriter, r *http.Request) {
 			// 結果画面を表示
 			http.Redirect(w, r, "/contactResult/", 301)
 		} else {
+			contactErrorMsg.Name = r.FormValue("name")
+			contactErrorMsg.Mail = r.FormValue("mail")
+			contactErrorMsg.MailCheck = r.FormValue("mailCheck")
+			contactErrorMsg.Content = r.FormValue("content")
 			ReturnPage(w, contactErrorMsg, "contact")
 		}
 	}

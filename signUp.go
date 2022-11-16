@@ -7,7 +7,9 @@ import (
 )
 
 type SignUpErrorMsg struct {
+	UserName        string
 	UserNameMessage string
+	Password        string
 	PasswordMessage string
 }
 
@@ -38,7 +40,7 @@ func handleSignUp(w http.ResponseWriter, r *http.Request) {
 		} else {
 			// ユーザーネーム既登録チェック
 			if !database.CheckUserName(GetConnection(), database.User.Name) {
-				signUpErrorMsg.UserNameMessage = "そのユーザーネームは既に使用されています"
+				signUpErrorMsg.UserNameMessage = "ユーザーネームが既に使用されています"
 			}
 		}
 
@@ -56,6 +58,8 @@ func handleSignUp(w http.ResponseWriter, r *http.Request) {
 			// ページ遷移
 			http.Redirect(w, r, "/search/", 301)
 		} else {
+			signUpErrorMsg.UserName = r.Form.Get("userName")
+			signUpErrorMsg.Password = r.Form.Get("password")
 			ReturnPage(w, signUpErrorMsg, "signUp")
 		}
 	}

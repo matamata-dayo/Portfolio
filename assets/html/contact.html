@@ -35,7 +35,7 @@
                             お名前
                         </p>
                         <p>
-                            <input type="text" name="name" class="input" placeholder="山田 太郎">
+                            <input type="text" name="name" class="input" placeholder="山田 太郎" value="{{ .Name }}">
                         </p>
                     </li>
                     <li>
@@ -43,7 +43,7 @@
                             メールアドレス
                         </p>
                         <p>
-                            <input type="mail" name="mail" class="input" placeholder="taroyamada@sample.com">
+                            <input type="mail" name="mail" class="input" placeholder="taroyamada@sample.com" value="{{ .Mail }}">
                         </p>
                     </li>
                     <li>
@@ -51,7 +51,7 @@
                             メールアドレス確認
                         </p>
                         <p>
-                            <input type="mail" name="mailCheck" class="input" placeholder="taroyamada@sample.com">
+                            <input type="mail" name="mailCheck" class="input" placeholder="taroyamada@sample.com" value="{{ .MailCheck}}">
                         </p>
                     </li>
                     <li>
@@ -59,7 +59,7 @@
                             お問い合わせ内容
                         </p>
                         <p>
-                            <textarea name="content" class="input item"></textarea>
+                            <textarea name="content" class="input item">{{ .Content }}</textarea>
                         </p>
                     </li>
                 </ul>
