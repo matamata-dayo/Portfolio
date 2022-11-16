@@ -16,6 +16,9 @@ func main() {
 	db = database.Connect()
 	defer db.Close()
 
+	// セッションの初期化処理
+	session.SessionInit()
+
 	// ハンドラの登録
 	http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("assets/"))))
 	http.HandleFunc("/", handleMenu)
@@ -23,6 +26,7 @@ func main() {
 	http.HandleFunc("/contactResult/", handleContactResult)
 	http.HandleFunc("/signUp/", handleSignUp)
 	http.HandleFunc("/login/", handleLogin)
+	http.HandleFunc("/logout/", handleLogout)
 	http.HandleFunc("/search/", handleSearch)
 	http.HandleFunc("/searchResult/", handleSearchResult)
 	http.ListenAndServe(":8080", nil)
@@ -32,10 +36,6 @@ func main() {
 menu画面のテンプレートを表示
 */
 func handleMenu(w http.ResponseWriter, r *http.Request) {
-
-	// セッションの開始
-	session.SessionStart(w, r)
-
 	ReturnPage(w, "", "menu")
 }
 

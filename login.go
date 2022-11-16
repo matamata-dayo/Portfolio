@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 	"portfolio/database"
 	"portfolio/session"
@@ -22,16 +23,21 @@ var loginErrorMsg LoginErrorMsg
 func handleLogin(w http.ResponseWriter, r *http.Request) {
 
 	if r.Method == "GET" {
+
 		// テンプレートメッセージの初期化
 		loginErrorMsg = LoginErrorMsg{}
 
 		// ログインセッションが存在する場合は、ログイン画面を飛ばす
-		if session.CheckSession() {
-			http.Redirect(w, r, "/search/", 301)
+		if session.CheckSession(w, r) {
+			fmt.Println("認証済のため認証確認を省略します")
+			ReturnPage(w, "", "search")
 		} else {
+			fmt.Println("まだ認証していません")
 			ReturnPage(w, loginErrorMsg, "login")
 		}
+
 	} else if r.Method == "POST" {
+
 		// テンプレートメッセージの初期化
 		loginErrorMsg = LoginErrorMsg{}
 
@@ -67,11 +73,27 @@ func handleLogin(w http.ResponseWriter, r *http.Request) {
 
 		// 入力内容によってページ遷移
 		if loginErrorMsg.UserNameMessage == "" && loginErrorMsg.PasswordMessage == "" {
-			http.Redirect(w, r, "/search/", 301)
+
+			// ログイン状態を保持
+			session.SessionStart(w, r)
+
+			// ページ遷移
+			ReturnPage(w, "", "search")
+
 		} else {
+
 			loginErrorMsg.UserName = userName
 			loginErrorMsg.Password = password
 			ReturnPage(w, loginErrorMsg, "login")
+
 		}
 	}
+}
+
+/*
+ログアウトボタン押下時の処理
+*/
+func handleLogout(w http.ResponseWriter, r *http.Request) {
+	session.SessionEnd(w, r)
+	ReturnPage(w, "", "menu")
 }

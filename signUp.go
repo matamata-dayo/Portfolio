@@ -3,6 +3,7 @@ package main
 import (
 	"net/http"
 	"portfolio/database"
+	"portfolio/session"
 	"unicode/utf8"
 )
 
@@ -55,8 +56,11 @@ func handleSignUp(w http.ResponseWriter, r *http.Request) {
 			// ユーザー情報をDBに登録
 			database.AddUserInfo(GetConnection())
 
+			// ログイン状態を保持
+			session.SessionStart(w, r)
+
 			// ページ遷移
-			http.Redirect(w, r, "/search/", 301)
+			ReturnPage(w, "", "search")
 		} else {
 			signUpErrorMsg.UserName = r.Form.Get("userName")
 			signUpErrorMsg.Password = r.Form.Get("password")

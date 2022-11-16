@@ -23,14 +23,11 @@ var session *sessions.Session
 // セッションを開始させる
 func SessionStart(w http.ResponseWriter, r *http.Request) {
 
-	// セッション初期処理
-	sessionInit()
-
 	// セッションオブジェクトを取得
 	session, _ := store.Get(r, session_name)
 
-	// ログインしている状態
-	session.Values["login"] = false
+	// 認証状態にする
+	session.Values["auth"] = true
 
 	// 保存
 	err := session.Save(r, w)
@@ -41,14 +38,35 @@ func SessionStart(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("セッションを開始しました")
 }
 
+func SessionEnd(w http.ResponseWriter, r *http.Request) {
+
+	// セッションオブジェクトを取得
+	session, _ := store.Get(r, session_name)
+
+	// 認証状態にする
+	session.Values["auth"] = false
+
+	// 保存
+	err := session.Save(r, w)
+	if err != nil {
+		panic(err.Error())
+	}
+
+	fmt.Println("セッションを終了しました")
+}
+
 // セッションの存在チェック
-func CheckSession() bool {
-	// login, _ := session.Values["login"]
-	return false
+func CheckSession(w http.ResponseWriter, r *http.Request) bool {
+
+	// セッションオブジェクトを取得
+	session, _ := store.Get(r, session_name)
+
+	login, _ := session.Values["auth"].(bool)
+	return login
 }
 
 // セッション用の初期処理
-func sessionInit() {
+func SessionInit() {
 
 	// 乱数生成
 	b := make([]byte, 48)
@@ -65,8 +83,10 @@ func sessionInit() {
 	store.Options = &sessions.Options{
 		Domain:   "localhost",
 		Path:     "/login/",
-		MaxAge:   10,
+		MaxAge:   0,
 		Secure:   false,
 		HttpOnly: true,
 	}
+
+	fmt.Println("セッション情報を初期化しました")
 }
