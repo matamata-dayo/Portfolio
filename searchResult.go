@@ -4,6 +4,7 @@ import (
 	"html/template"
 	"net/http"
 	"portfolio/database"
+	"portfolio/session"
 )
 
 /*
@@ -11,15 +12,23 @@ import (
 */
 func handleSearchResult(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "GET" {
-		t, err := template.ParseFiles("./assets/html/searchResult.html")
+
+		url := "./assets/html/searchResult.html"
+
+		// ログインしていない状態からURL直打ちでアクセスした場合
+		if !session.CheckSession(w, r) {
+			url = "./assets/html/menu.html"
+		}
+
+		t, err := template.ParseFiles(url)
 		if err != nil {
 			panic(err.Error())
 		}
 		if err := t.Execute(w, database.SearchResult); err != nil {
 			panic(err.Error())
 		}
-	}
-	if r.Method == "POST" {
+
+	} else if r.Method == "POST" {
 		//
 	}
 }
