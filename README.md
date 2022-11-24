@@ -10,10 +10,10 @@ Golangに魅力を感じ、まずはGolangに関する書籍を全て購入し�
 WEBアプリ開発を通じて、セキュリティ対策やRMDB周りやコンテナ技術なども学べれば一石二鳥だと思い、まずは手を動かしてみることにしました。
 
 ## 開発言語や使用技術
-フロントエンド  ：HTML, CSS, JavaScript
-バックエンド    ：Golang
-データベース    ：MySQL, MySQLworkbench
-コンテナ       ：Docker
+フロントエンド  ：HTML, CSS, JavaScript  
+バックエンド    ：Golang  
+データベース    ：MySQL, MySQLworkbench  
+コンテナ       ：Docker  
 バージョン管理  ：Git, GitHub
 
 ## こだわった部分
