@@ -4,6 +4,8 @@ import (
 	"context"
 	"database/sql"
 	"fmt"
+
+	"golang.org/x/crypto/bcrypt"
 )
 
 /*
@@ -55,9 +57,13 @@ func CheckPassword(db *sql.DB, userName string, password string) bool {
 		rows.Scan(&pass)
 	}
 
-	if pass == password {
+	// ハッシュ化したパスワードとの照合
+	compErr := bcrypt.CompareHashAndPassword([]byte(pass), []byte(password))
+	if compErr == nil {
+		fmt.Println("パスワードの照合に成功しました")
 		return true
 	} else {
+		fmt.Println("パスワードの照合に失敗しました")
 		return false
 	}
 }

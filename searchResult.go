@@ -1,7 +1,7 @@
 package main
 
 import (
-	"html/template"
+	"fmt"
 	"net/http"
 	"portfolio/database"
 	"portfolio/session"
@@ -13,22 +13,18 @@ import (
 func handleSearchResult(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "GET" {
 
-		url := "./assets/html/searchResult.html"
-
-		// ログインしていない状態からURL直打ちでアクセスした場合
-		if !session.CheckSession(w, r) {
-			url = "./assets/html/menu.html"
-		}
-
-		t, err := template.ParseFiles(url)
-		if err != nil {
-			panic(err.Error())
-		}
-		if err := t.Execute(w, database.SearchResult); err != nil {
-			panic(err.Error())
+		// ログインしていない状態からURL直打ちでアクセスした場合メニュー画面に遷移
+		if session.CheckSession(w, r) {
+			ReturnPage(w, database.SearchResult, "searchResult")
+		} else {
+			fmt.Println("セッションが存在しないため、メニュー画面に戻します")
+			ReturnPage(w, "", "menu")
 		}
 
 	} else if r.Method == "POST" {
-		//
+
+		database.GetPlayerInfo(r, GetConnection())
+		ReturnPage(w, database.SearchResult, "searchResult")
+
 	}
 }

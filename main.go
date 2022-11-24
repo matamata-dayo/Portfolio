@@ -2,6 +2,7 @@ package main
 
 import (
 	"database/sql"
+	"fmt"
 	"html/template"
 	"net/http"
 	"portfolio/database"
@@ -11,6 +12,8 @@ import (
 var db *sql.DB
 
 func main() {
+
+	fmt.Println("*---プレミアリーグ選手検索を開始します---*")
 
 	// コネクションを開き、アプリ終了時に閉じる
 	db = database.Connect()

@@ -4,6 +4,8 @@ import (
 	"context"
 	"database/sql"
 	"fmt"
+
+	"golang.org/x/crypto/bcrypt"
 )
 
 type UserInfo struct {
@@ -22,7 +24,12 @@ func SetUserInfo(a string, b string) {
 
 func AddUserInfo(db *sql.DB) {
 
-	query := "INSERT INTO user_info(name, password) VALUES('" + User.Name + "', '" + User.Password + "')"
+	password := []byte(User.Password)
+
+	// パスワードをハッシュ化
+	hashed, _ := bcrypt.GenerateFromPassword(password, 10)
+
+	query := "INSERT INTO user_info(name, password) VALUES('" + User.Name + "', '" + string(hashed) + "')"
 
 	_, err := db.QueryContext(context.Background(), query)
 

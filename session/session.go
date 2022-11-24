@@ -43,7 +43,7 @@ func SessionEnd(w http.ResponseWriter, r *http.Request) {
 	// セッションオブジェクトを取得
 	session, _ := store.Get(r, session_name)
 
-	// 認証状態にする
+	// 未認証状態にする
 	session.Values["auth"] = false
 
 	// 保存
@@ -62,6 +62,7 @@ func CheckSession(w http.ResponseWriter, r *http.Request) bool {
 	session, _ := store.Get(r, session_name)
 
 	login, _ := session.Values["auth"].(bool)
+
 	return login
 }
 
@@ -81,8 +82,8 @@ func SessionInit() {
 
 	// セッションの有効範囲を指定
 	store.Options = &sessions.Options{
+		Path:     "/",
 		Domain:   "localhost",
-		Path:     "/login/",
 		MaxAge:   0,
 		Secure:   false,
 		HttpOnly: true,
