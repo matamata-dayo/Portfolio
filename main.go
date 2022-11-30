@@ -1,12 +1,15 @@
 package main
 
 import (
+	"context"
 	"database/sql"
 	"fmt"
 	"html/template"
 	"net/http"
 	"portfolio/database"
 	"portfolio/session"
+
+	"golang.org/x/sync/errgroup"
 )
 
 var db *sql.DB
@@ -32,7 +35,36 @@ func main() {
 	http.HandleFunc("/logout/", handleLogout)
 	http.HandleFunc("/search/", handleSearch)
 	http.HandleFunc("/searchResult/", handleSearchResult)
-	http.ListenAndServe(":8080", nil)
+
+	if err := run(context.Background()); err != nil {
+		fmt.Println("サーバーの正常終了に失敗しました")
+	}
+
+}
+
+/*
+外部から終了を指示されたときにサーバーを終了するrun関数
+*/
+func run(ctx context.Context) error {
+	s := &http.Server{
+		Addr: ":8080",
+	}
+	eg, ctx := errgroup.WithContext(ctx)
+
+	eg.Go(func() error {
+		if err := s.ListenAndServe(); err != nil && err != http.ErrServerClosed {
+			fmt.Println("サーバーのクローズに失敗しました")
+			return err
+		}
+		return nil
+	})
+
+	// チャネルからの通知（終了通知）を待機する
+	<-ctx.Done()
+	if err := s.Shutdown(context.Background()); err != nil {
+		fmt.Println("サーバーのシャットダウンに失敗しました")
+	}
+	return eg.Wait()
 }
 
 /*
