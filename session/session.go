@@ -89,5 +89,5 @@ func SessionInit() {
 		HttpOnly: true,
 	}
 
-	fmt.Println("セッション情報を初期化しました")
+	fmt.Println("*---セッション情報を初期化しました---*")
 }
